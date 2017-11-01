@@ -45,6 +45,7 @@
 		195EEAA61FA701220058A849 /* UIViewController+Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA8E1FA701220058A849 /* UIViewController+Storyboard.swift */; };
 		195EEAA71FA701220058A849 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA8F1FA701220058A849 /* UIViewExtension.swift */; };
 		195EEAA91FA701E70058A849 /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAA81FA701E70058A849 /* DispatchQueueExtension.swift */; };
+		195EEAB31FA960110058A849 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB21FA960110058A849 /* KeychainManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		195EEA8E1FA701220058A849 /* UIViewController+Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Storyboard.swift"; sourceTree = "<group>"; };
 		195EEA8F1FA701220058A849 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		195EEAA81FA701E70058A849 /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
+		195EEAB21FA960110058A849 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 			children = (
 				195EEA5E1FA700DD0058A849 /* DIContainer.swift */,
 				195EEA5F1FA700DD0058A849 /* LocalNotificationModel.swift */,
+				195EEAB21FA960110058A849 /* KeychainManager.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				195EEA981FA701220058A849 /* StringExtension.swift in Sources */,
 				195EEA941FA701220058A849 /* Enum+Enumerable.swift in Sources */,
 				195EEA931FA701220058A849 /* Dictionary+JsonString.swift in Sources */,
+				195EEAB31FA960110058A849 /* KeychainManager.swift in Sources */,
 				195EEA9B1FA701220058A849 /* UIButton+MultipleTouches.swift in Sources */,
 				195EEA9F1FA701220058A849 /* UIGestureRecognizerExtension.swift in Sources */,
 				195EEA9C1FA701220058A849 /* UIButton+TitleDesignable.swift in Sources */,
