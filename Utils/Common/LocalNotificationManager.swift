@@ -1,5 +1,5 @@
 //
-//  LocalNotificationModel.swift
+//  LocalNotificationManager.swift
 //  Utils
 //
 //  Created by roza on 2017/08/03.
@@ -10,19 +10,19 @@ import Foundation
 import UserNotifications
 import UIKit
 
-class LocalNotificationModel {
+class LocalNotificationManager {
     
-    static var instance: LocalNotificationModel_Interface {
+    static var instance: LocalNotificationManagerProtocol {
         if #available(iOS 10.0, *) {
-            return LocalNotificationModel.Implement_iOS10()
+            return LocalNotificationManager.Implement_iOS10()
         } else {
-            return LocalNotificationModel.Implement_iOS9()
+            return LocalNotificationManager.Implement_iOS9()
         }
     }
 
     private init() { }
     
-    class Implement_iOS9: LocalNotificationModel_Interface {
+    class Implement_iOS9: LocalNotificationManagerProtocol {
         func scheduleNotification(_ notification: LocalNotification) {
             UIApplication.shared.scheduleLocalNotification(notification.uiLocalNotification)
         }
@@ -41,7 +41,7 @@ class LocalNotificationModel {
     }
     
     @available(iOS 10.0, *)
-    class Implement_iOS10: LocalNotificationModel_Interface {
+    class Implement_iOS10: LocalNotificationManagerProtocol {
         func scheduleNotification(_ notification: LocalNotification) {
             UNUserNotificationCenter.current().add(notification.notificationrequest, withCompletionHandler: nil)
         }
@@ -73,7 +73,7 @@ class LocalNotificationModel {
     }
 }
 
-protocol LocalNotificationModel_Interface {
+protocol LocalNotificationManagerProtocol {
     func scheduleNotification(_ notification: LocalNotification)
     func cancelNotification(identifier: String)
     func cancelAllNotifications()
@@ -101,11 +101,11 @@ class LocalNotification {
     }
     
     func register() {
-        LocalNotificationModel.instance.scheduleNotification(self)
+        LocalNotificationManager.instance.scheduleNotification(self)
     }
     
     func cancel() {
-        LocalNotificationModel.instance.cancelNotification(identifier: self.identifier)
+        LocalNotificationManager.instance.cancelNotification(identifier: self.identifier)
     }
     
     fileprivate var uiLocalNotification: UILocalNotification {
