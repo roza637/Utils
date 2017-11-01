@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		193DD2791FA9BA1600D5E139 /* DictionaryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193DD2781FA9BA1600D5E139 /* DictionaryExtension.swift */; };
 		195EEA531FA6B25F0058A849 /* Utils.h in Headers */ = {isa = PBXBuildFile; fileRef = 195EEA511FA6B25F0058A849 /* Utils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		195EEA601FA700DD0058A849 /* DIContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA5E1FA700DD0058A849 /* DIContainer.swift */; };
 		195EEA611FA700DD0058A849 /* LocalNotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA5F1FA700DD0058A849 /* LocalNotificationManager.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		193DD2781FA9BA1600D5E139 /* DictionaryExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionaryExtension.swift; sourceTree = "<group>"; };
 		195EEA4E1FA6B25F0058A849 /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		195EEA511FA6B25F0058A849 /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 		195EEA521FA6B25F0058A849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		195EEA5D1FA6B3840058A849 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				193DD2781FA9BA1600D5E139 /* DictionaryExtension.swift */,
 				195EEAC01FA973960058A849 /* UserDefaultExtension.swift */,
 				195EEA781FA701220058A849 /* ArrayExtension.swift */,
 				195EEA791FA701220058A849 /* CGRectExtension.swift */,
@@ -294,6 +297,7 @@
 				195EEA9D1FA701220058A849 /* UIColorExtension.swift in Sources */,
 				195EEAA61FA701220058A849 /* UIViewController+Storyboard.swift in Sources */,
 				195EEABC1FA96EFF0058A849 /* UIButton+TitleDesignable.swift in Sources */,
+				193DD2791FA9BA1600D5E139 /* DictionaryExtension.swift in Sources */,
 				195EEA721FA700F50058A849 /* PickerViewController.swift in Sources */,
 				195EEAA31FA701220058A849 /* UIViewController+DialogPresentable.swift in Sources */,
 				195EEAA01FA701220058A849 /* UIImage+Color.swift in Sources */,
