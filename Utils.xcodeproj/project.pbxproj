@@ -30,15 +30,10 @@
 		195EEA971FA701220058A849 /* NSDecimalNumberOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA7F1FA701220058A849 /* NSDecimalNumberOperator.swift */; };
 		195EEA981FA701220058A849 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA801FA701220058A849 /* StringExtension.swift */; };
 		195EEA991FA701220058A849 /* UIAlertControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA811FA701220058A849 /* UIAlertControllerExtension.swift */; };
-		195EEA9A1FA701220058A849 /* UIButton+HighlightedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA821FA701220058A849 /* UIButton+HighlightedColor.swift */; };
-		195EEA9B1FA701220058A849 /* UIButton+MultipleTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA831FA701220058A849 /* UIButton+MultipleTouches.swift */; };
-		195EEA9C1FA701220058A849 /* UIButton+TitleDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA841FA701220058A849 /* UIButton+TitleDesignable.swift */; };
 		195EEA9D1FA701220058A849 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA851FA701220058A849 /* UIColorExtension.swift */; };
 		195EEA9E1FA701220058A849 /* UIDevice+Platform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA861FA701220058A849 /* UIDevice+Platform.swift */; };
 		195EEA9F1FA701220058A849 /* UIGestureRecognizerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA871FA701220058A849 /* UIGestureRecognizerExtension.swift */; };
 		195EEAA01FA701220058A849 /* UIImage+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA881FA701220058A849 /* UIImage+Color.swift */; };
-		195EEAA11FA701220058A849 /* UIImageView+TemplateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA891FA701220058A849 /* UIImageView+TemplateImage.swift */; };
-		195EEAA21FA701220058A849 /* UIView+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA8A1FA701220058A849 /* UIView+Corner.swift */; };
 		195EEAA31FA701220058A849 /* UIViewController+DialogPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA8B1FA701220058A849 /* UIViewController+DialogPresentable.swift */; };
 		195EEAA41FA701220058A849 /* UIViewController+DrawerPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA8C1FA701220058A849 /* UIViewController+DrawerPresentable.swift */; };
 		195EEAA51FA701220058A849 /* UIViewController+FrontViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA8D1FA701220058A849 /* UIViewController+FrontViewController.swift */; };
@@ -46,6 +41,11 @@
 		195EEAA71FA701220058A849 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEA8F1FA701220058A849 /* UIViewExtension.swift */; };
 		195EEAA91FA701E70058A849 /* DispatchQueueExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAA81FA701E70058A849 /* DispatchQueueExtension.swift */; };
 		195EEAB31FA960110058A849 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB21FA960110058A849 /* KeychainManager.swift */; };
+		195EEABA1FA96EFF0058A849 /* UIButton+HighlightedColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB51FA96EFF0058A849 /* UIButton+HighlightedColor.swift */; };
+		195EEABB1FA96EFF0058A849 /* UIButton+MultipleTouches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB61FA96EFF0058A849 /* UIButton+MultipleTouches.swift */; };
+		195EEABC1FA96EFF0058A849 /* UIButton+TitleDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB71FA96EFF0058A849 /* UIButton+TitleDesignable.swift */; };
+		195EEABD1FA96EFF0058A849 /* UIImageView+TemplateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB81FA96EFF0058A849 /* UIImageView+TemplateImage.swift */; };
+		195EEABE1FA96EFF0058A849 /* UIView+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB91FA96EFF0058A849 /* UIView+Corner.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,15 +74,10 @@
 		195EEA7F1FA701220058A849 /* NSDecimalNumberOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDecimalNumberOperator.swift; sourceTree = "<group>"; };
 		195EEA801FA701220058A849 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		195EEA811FA701220058A849 /* UIAlertControllerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIAlertControllerExtension.swift; sourceTree = "<group>"; };
-		195EEA821FA701220058A849 /* UIButton+HighlightedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+HighlightedColor.swift"; sourceTree = "<group>"; };
-		195EEA831FA701220058A849 /* UIButton+MultipleTouches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+MultipleTouches.swift"; sourceTree = "<group>"; };
-		195EEA841FA701220058A849 /* UIButton+TitleDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+TitleDesignable.swift"; sourceTree = "<group>"; };
 		195EEA851FA701220058A849 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		195EEA861FA701220058A849 /* UIDevice+Platform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIDevice+Platform.swift"; sourceTree = "<group>"; };
 		195EEA871FA701220058A849 /* UIGestureRecognizerExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIGestureRecognizerExtension.swift; sourceTree = "<group>"; };
 		195EEA881FA701220058A849 /* UIImage+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Color.swift"; sourceTree = "<group>"; };
-		195EEA891FA701220058A849 /* UIImageView+TemplateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+TemplateImage.swift"; sourceTree = "<group>"; };
-		195EEA8A1FA701220058A849 /* UIView+Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corner.swift"; sourceTree = "<group>"; };
 		195EEA8B1FA701220058A849 /* UIViewController+DialogPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DialogPresentable.swift"; sourceTree = "<group>"; };
 		195EEA8C1FA701220058A849 /* UIViewController+DrawerPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+DrawerPresentable.swift"; sourceTree = "<group>"; };
 		195EEA8D1FA701220058A849 /* UIViewController+FrontViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+FrontViewController.swift"; sourceTree = "<group>"; };
@@ -90,6 +85,11 @@
 		195EEA8F1FA701220058A849 /* UIViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		195EEAA81FA701E70058A849 /* DispatchQueueExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DispatchQueueExtension.swift; sourceTree = "<group>"; };
 		195EEAB21FA960110058A849 /* KeychainManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		195EEAB51FA96EFF0058A849 /* UIButton+HighlightedColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+HighlightedColor.swift"; sourceTree = "<group>"; };
+		195EEAB61FA96EFF0058A849 /* UIButton+MultipleTouches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+MultipleTouches.swift"; sourceTree = "<group>"; };
+		195EEAB71FA96EFF0058A849 /* UIButton+TitleDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+TitleDesignable.swift"; sourceTree = "<group>"; };
+		195EEAB81FA96EFF0058A849 /* UIImageView+TemplateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+TemplateImage.swift"; sourceTree = "<group>"; };
+		195EEAB91FA96EFF0058A849 /* UIView+Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corner.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +125,7 @@
 				195EEA5C1FA6B3720058A849 /* Common */,
 				195EEA5B1FA6B3510058A849 /* CommonUI */,
 				195EEA5D1FA6B3840058A849 /* Extension */,
+				195EEAB41FA96DD10058A849 /* IBExtension */,
 				195EEA511FA6B25F0058A849 /* Utils.h */,
 				195EEA521FA6B25F0058A849 /* Info.plist */,
 			);
@@ -172,15 +173,10 @@
 				195EEA7F1FA701220058A849 /* NSDecimalNumberOperator.swift */,
 				195EEA801FA701220058A849 /* StringExtension.swift */,
 				195EEA811FA701220058A849 /* UIAlertControllerExtension.swift */,
-				195EEA821FA701220058A849 /* UIButton+HighlightedColor.swift */,
-				195EEA831FA701220058A849 /* UIButton+MultipleTouches.swift */,
-				195EEA841FA701220058A849 /* UIButton+TitleDesignable.swift */,
 				195EEA851FA701220058A849 /* UIColorExtension.swift */,
 				195EEA861FA701220058A849 /* UIDevice+Platform.swift */,
 				195EEA871FA701220058A849 /* UIGestureRecognizerExtension.swift */,
 				195EEA881FA701220058A849 /* UIImage+Color.swift */,
-				195EEA891FA701220058A849 /* UIImageView+TemplateImage.swift */,
-				195EEA8A1FA701220058A849 /* UIView+Corner.swift */,
 				195EEA8B1FA701220058A849 /* UIViewController+DialogPresentable.swift */,
 				195EEA8C1FA701220058A849 /* UIViewController+DrawerPresentable.swift */,
 				195EEA8D1FA701220058A849 /* UIViewController+FrontViewController.swift */,
@@ -188,6 +184,18 @@
 				195EEA8F1FA701220058A849 /* UIViewExtension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		195EEAB41FA96DD10058A849 /* IBExtension */ = {
+			isa = PBXGroup;
+			children = (
+				195EEAB51FA96EFF0058A849 /* UIButton+HighlightedColor.swift */,
+				195EEAB61FA96EFF0058A849 /* UIButton+MultipleTouches.swift */,
+				195EEAB71FA96EFF0058A849 /* UIButton+TitleDesignable.swift */,
+				195EEAB81FA96EFF0058A849 /* UIImageView+TemplateImage.swift */,
+				195EEAB91FA96EFF0058A849 /* UIView+Corner.swift */,
+			);
+			path = IBExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -277,36 +285,36 @@
 				195EEA751FA700F50058A849 /* TouchThroughWindow.swift in Sources */,
 				195EEA921FA701220058A849 /* DateExtension.swift in Sources */,
 				195EEA741FA700F50058A849 /* TouchThroughView.swift in Sources */,
-				195EEA9A1FA701220058A849 /* UIButton+HighlightedColor.swift in Sources */,
 				195EEAA91FA701E70058A849 /* DispatchQueueExtension.swift in Sources */,
+				195EEABB1FA96EFF0058A849 /* UIButton+MultipleTouches.swift in Sources */,
 				195EEAA51FA701220058A849 /* UIViewController+FrontViewController.swift in Sources */,
 				195EEA9D1FA701220058A849 /* UIColorExtension.swift in Sources */,
 				195EEAA61FA701220058A849 /* UIViewController+Storyboard.swift in Sources */,
+				195EEABC1FA96EFF0058A849 /* UIButton+TitleDesignable.swift in Sources */,
 				195EEA721FA700F50058A849 /* PickerViewController.swift in Sources */,
 				195EEAA31FA701220058A849 /* UIViewController+DialogPresentable.swift in Sources */,
-				195EEAA11FA701220058A849 /* UIImageView+TemplateImage.swift in Sources */,
 				195EEAA01FA701220058A849 /* UIImage+Color.swift in Sources */,
 				195EEA731FA700F50058A849 /* ToastOverlayViewController.swift in Sources */,
 				195EEA701FA700F50058A849 /* OverlayPresentation.swift in Sources */,
 				195EEA971FA701220058A849 /* NSDecimalNumberOperator.swift in Sources */,
 				195EEA951FA701220058A849 /* JsonConvertible.swift in Sources */,
+				195EEABA1FA96EFF0058A849 /* UIButton+HighlightedColor.swift in Sources */,
 				195EEA901FA701220058A849 /* ArrayExtension.swift in Sources */,
 				195EEA611FA700DD0058A849 /* LocalNotificationManager.swift in Sources */,
 				195EEA6F1FA700F50058A849 /* DrawerViewController.swift in Sources */,
 				195EEA601FA700DD0058A849 /* DIContainer.swift in Sources */,
 				195EEA6D1FA700F50058A849 /* DatePickerViewController.swift in Sources */,
 				195EEA991FA701220058A849 /* UIAlertControllerExtension.swift in Sources */,
-				195EEAA21FA701220058A849 /* UIView+Corner.swift in Sources */,
 				195EEAA41FA701220058A849 /* UIViewController+DrawerPresentable.swift in Sources */,
 				195EEAA71FA701220058A849 /* UIViewExtension.swift in Sources */,
 				195EEA911FA701220058A849 /* CGRectExtension.swift in Sources */,
 				195EEA981FA701220058A849 /* StringExtension.swift in Sources */,
 				195EEA941FA701220058A849 /* Enum+Enumerable.swift in Sources */,
 				195EEA931FA701220058A849 /* Dictionary+JsonString.swift in Sources */,
+				195EEABD1FA96EFF0058A849 /* UIImageView+TemplateImage.swift in Sources */,
 				195EEAB31FA960110058A849 /* KeychainManager.swift in Sources */,
-				195EEA9B1FA701220058A849 /* UIButton+MultipleTouches.swift in Sources */,
 				195EEA9F1FA701220058A849 /* UIGestureRecognizerExtension.swift in Sources */,
-				195EEA9C1FA701220058A849 /* UIButton+TitleDesignable.swift in Sources */,
+				195EEABE1FA96EFF0058A849 /* UIView+Corner.swift in Sources */,
 				195EEA961FA701220058A849 /* NSDecimalNumberExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
