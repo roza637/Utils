@@ -19,6 +19,10 @@ extension UIView {
         self.addSubviews(subviews: subviews)
     }
     
+    func removeAllSubviews() {
+        self.subviews.forEach{ $0.removeFromSuperview() }
+    }
+    
     func setCornerRadius(radius: CGFloat, corner: UIRectCorner) {
         let maskPath = UIBezierPath(roundedRect: bounds,
                                     byRoundingCorners: corner,

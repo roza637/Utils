@@ -66,6 +66,10 @@ extension String {
     var doubleValue: Double? {
         return Double(self)
     }
+    
+    var url: URL? {
+        return URL(string: self)
+    }
 }
 
 protocol StringOptionalExtensionProtocol {
