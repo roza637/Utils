@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 
 extension UIButton {
-    @IBInspectable var isExclusive: Bool {
+    @IBInspectable
+    public var isExclusive: Bool {
         get {
             return self.isExclusiveTouch
         }

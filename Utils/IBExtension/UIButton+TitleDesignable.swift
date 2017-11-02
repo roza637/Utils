@@ -9,7 +9,8 @@
 import UIKit
 
 extension UIButton {
-    @IBInspectable var numberOfLines: Int {
+    @IBInspectable
+    public var numberOfLines: Int {
         get {
             return self.titleLabel!.numberOfLines
         }
@@ -18,7 +19,8 @@ extension UIButton {
         }
     }
     
-    @IBInspectable var minimumFontScale: CGFloat {
+    @IBInspectable
+    public var minimumFontScale: CGFloat {
         get {
             return self.titleLabel!.minimumScaleFactor
         }
@@ -28,7 +30,8 @@ extension UIButton {
         }
     }
     
-    @IBInspectable var textCentering: Bool {
+    @IBInspectable
+    public var textCentering: Bool {
         get {
             return self.textCentering
         }

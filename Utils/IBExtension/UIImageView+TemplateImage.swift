@@ -12,7 +12,7 @@ import UIKit
 extension UIImageView {
     
     @IBInspectable
-    var templateImage: UIImage? {
+    public var templateImage: UIImage? {
         get {
             return self.image
         }

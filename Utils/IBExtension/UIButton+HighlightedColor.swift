@@ -12,7 +12,7 @@ import UIKit
 extension UIButton {
     
     @IBInspectable
-    var hilightedColor: UIColor? {
+    public var hilightedColor: UIColor? {
         get {
             return self.backgroundImage(for: .highlighted)?.color
         }
