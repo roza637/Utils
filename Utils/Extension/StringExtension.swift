@@ -70,6 +70,40 @@ extension String {
     var url: URL? {
         return URL(string: self)
     }
+    
+}
+
+extension String {
+    func withFont(_ value: UIFont, range: NSRange? = nil) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: self).withFont(value, range: range)
+    }
+    
+    func withTextColor(_ value: UIColor, range: NSRange? = nil) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: self).withTextColor(value, range: range)
+    }
+    
+    func withBackgroundColor(_ value: UIColor, range: NSRange? = nil) -> NSMutableAttributedString {
+        return NSMutableAttributedString(string: self).withBackgroundColor(value, range: range)
+    }
+}
+
+extension NSMutableAttributedString {
+    
+    func withFont(_ value: UIFont, range: NSRange? = nil) -> NSMutableAttributedString {
+        self.addAttributes([NSFontAttributeName : value], range: range ?? NSMakeRange(0, length))
+        return self
+    }
+    
+    func withTextColor(_ value: UIColor, range: NSRange? = nil) -> NSMutableAttributedString {
+        self.addAttributes([NSForegroundColorAttributeName : value], range: range ?? NSMakeRange(0, length))
+        return self
+    }
+    
+    func withBackgroundColor(_ value: UIColor, range: NSRange? = nil) -> NSMutableAttributedString {
+        self.addAttributes([NSBackgroundColorAttributeName : value], range: range ?? NSMakeRange(0, length))
+        return self
+    }
+    
 }
 
 protocol StringOptionalExtensionProtocol {
