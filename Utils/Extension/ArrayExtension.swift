@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension Array where Element: Equatable {
+public extension Array where Element: Equatable {
     
-    var distinct: [Element] {
+    public var distinct: [Element] {
         var a: [Element] = []
         self.forEach{
             if !a.contains($0) {
@@ -21,17 +21,17 @@ extension Array where Element: Equatable {
     }
 }
 
-extension Array {
+public extension Array {
     
-    func distinct(isEquivalent: (Element, Element) -> Bool) -> [Element] {
+    public func distinct(isEquivalent: (Element, Element) -> Bool) -> [Element] {
         return self.reduce([]) { (a: [Element], e: Element) -> [Element] in
             a.filter{ isEquivalent($0, e) }.count > 0 ? a : a + [e]
         }
     }
 }
 
-extension Array {
-    mutating func move(from: Int, to: Int) {
+public extension Array {
+    public mutating func move(from: Int, to: Int) {
         let fromObject = self[from]
         
         self.remove(at: from)
@@ -39,8 +39,8 @@ extension Array {
     }
 }
 
-extension Sequence {
-    func parallelForEach(_ action: @escaping (Self.Iterator.Element) -> ()) {
+public extension Sequence {
+    public func parallelForEach(_ action: @escaping (Self.Iterator.Element) -> ()) {
         let queue = DispatchQueue.global()
         let group = DispatchGroup()
         for e in self {

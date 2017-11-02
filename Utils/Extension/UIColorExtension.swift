@@ -11,14 +11,14 @@ import UIKit
 
 extension UIColor {
 
-    convenience init(hex: Int, alpha: Double = 1.0) {
+    public convenience init(hex: Int, alpha: Double = 1.0) {
         let r = CGFloat((hex & 0xFF0000) >> 16) / 255.0
         let g = CGFloat((hex & 0x00FF00) >> 8) / 255.0
         let b = CGFloat(hex & 0x0000FF) / 255.0
         self.init(red: r, green: g, blue: b, alpha: CGFloat(alpha))
     }
     
-    func image(size: CGSize = CGSize(width:1, height: 1)) -> UIImage {
+    public func image(size: CGSize = CGSize(width:1, height: 1)) -> UIImage {
         UIGraphicsBeginImageContext(size)
         
         let rect = CGRect(origin: CGPoint.zero, size: size)
@@ -31,14 +31,14 @@ extension UIColor {
         return image!
     }
     
-    func alphaColor(_ alpha: CGFloat) -> UIColor {
+    public func alphaColor(_ alpha: CGFloat) -> UIColor {
         let rgba = self.rgba
         return UIColor(red: rgba.red, green: rgba.green, blue: rgba.blue, alpha: alpha)
     }
     
-    typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
+    public typealias RGBA = (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)
     
-    var rgba: RGBA {
+    public var rgba: RGBA {
         var red: CGFloat = 0.0
         var green: CGFloat = 0.0
         var blue: CGFloat = 0.0
@@ -49,7 +49,7 @@ extension UIColor {
         return (red, green, blue, alpha)
     }
     //    https://www.w3.org/TR/2008/REC-WCAG20-20081211/#relativeluminancedef
-    var relativeLuminance: CGFloat {
+    public var relativeLuminance: CGFloat {
         let rgba = self.rgba
         func lumi(_ rgb: CGFloat) -> CGFloat {
             if rgb <= 0.03928 {
@@ -67,7 +67,7 @@ extension UIColor {
     }
     
     //    https://www.w3.org/TR/2008/REC-WCAG20-20081211/#contrast-ratiodef
-    func contrastRatio(_ color: UIColor) -> CGFloat {
+    public func contrastRatio(_ color: UIColor) -> CGFloat {
         let luminance1 = self.relativeLuminance
         let luminance2 = color.relativeLuminance
         if luminance1 > luminance2 {
@@ -77,7 +77,7 @@ extension UIColor {
         }
     }
     
-    var recommendedTextColor: UIColor {
+    public var recommendedTextColor: UIColor {
         let darkContrastRatio = self.contrastRatio(UIColor.black)
         let lightContrastRatio = self.contrastRatio(UIColor.white)
         

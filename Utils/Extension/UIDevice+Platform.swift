@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIDevice {
-    var platform: String {
+    public var platform: String {
         get {
             let name = "hw.machine"
             let cName = (name as NSString).utf8String

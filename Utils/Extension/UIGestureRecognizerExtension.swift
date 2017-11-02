@@ -11,19 +11,19 @@ import UIKit
 
 extension UIView {
     
-    func addTapGesture(action: @escaping (UITapGestureRecognizer) -> ()) {
+    public func addTapGesture(action: @escaping (UITapGestureRecognizer) -> ()) {
         self.addGestureRecognizer(TapGestureRecognizer(action: action))
     }
     
-    func addPanGesture(action: @escaping (UIPanGestureRecognizer) -> ()) {
+    public func addPanGesture(action: @escaping (UIPanGestureRecognizer) -> ()) {
         self.addGestureRecognizer(PanGestureRecognizer(action: action))
     }
 
-    func addSwipeGesture(action: @escaping (UISwipeGestureRecognizer) -> ()) {
+    public func addSwipeGesture(action: @escaping (UISwipeGestureRecognizer) -> ()) {
         self.addGestureRecognizer(SwipeGestureRecognizer(action: action))
     }
 
-    func addHoldGesture(changeCount: Int = 20, durationSlow: Double = 0.1, durationFast: Double = 0.05, action: @escaping (UILongPressGestureRecognizer) -> ()) {
+    public func addHoldGesture(changeCount: Int = 20, durationSlow: Double = 0.1, durationFast: Double = 0.05, action: @escaping (UILongPressGestureRecognizer) -> ()) {
         self.addGestureRecognizer(HoldGestureRecognizer(changeCount: changeCount, durationSlow: durationSlow, durationFast: durationFast, action: action))
     }
 }

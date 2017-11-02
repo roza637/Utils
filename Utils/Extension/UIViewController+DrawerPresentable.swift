@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 
-protocol DrawerPresentable {
+public protocol DrawerPresentable {
     var drawerView: UIView! {get}
     var backgroundView: UIView! {get}
     var drawerGravity: DrawerGravity {get}
     static func getInstance() -> Self
 }
 
-enum DrawerGravity {
+public enum DrawerGravity {
     case left
     case right
 }
@@ -26,7 +26,7 @@ fileprivate let duration: TimeInterval = 0.3
 
 extension DrawerPresentable where Self: UIViewController {
     
-    static func showDrawer() {
+    public static func showDrawer() {
         let root = UIViewController.getFrontViewController()
         let dialog = Self.getInstance()
         
@@ -120,7 +120,7 @@ extension DrawerPresentable where Self: UIViewController {
         return drawerGravity == .left ? 0 : view.frame.width - drawerView.frame.width
     }
     
-    func showDrawer() {
+    public func showDrawer() {
         UIView.animate(withDuration: duration,
                        delay: 0,
                        options: .curveEaseInOut,
@@ -131,7 +131,7 @@ extension DrawerPresentable where Self: UIViewController {
         })
     }
     
-    func hideDrawer(completion:(() -> ())? = nil) {
+    public func hideDrawer(completion:(() -> ())? = nil) {
         UIView.animate(
             withDuration: duration,
             delay: 0,

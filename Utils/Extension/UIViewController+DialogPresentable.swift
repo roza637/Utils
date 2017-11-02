@@ -11,7 +11,7 @@ import UIKit
 fileprivate let backgroundAlpha: CGFloat = 0.6
 fileprivate let duration: TimeInterval = 0.2
 
-protocol DialogPresentable {
+public protocol DialogPresentable {
     var dialogView: UIView! {get}
     var backgroundView: UIView! {get}
     var presentingViewController: UIViewController? {get}
@@ -25,7 +25,7 @@ protocol DialogPresentable {
 }
 
 extension DialogPresentable where Self: UIViewController {
-    static var topViewController: UIViewController {
+    public static var topViewController: UIViewController {
         var top = UIApplication.shared.keyWindow?.rootViewController
         while (top!.presentedViewController) != nil {
             top = top!.presentedViewController
@@ -33,7 +33,7 @@ extension DialogPresentable where Self: UIViewController {
         return top!
     }
     
-    static func showDialog(viewController: UIViewController? = nil, animated: Bool = true, initialize: ((Self) -> ())? = nil) {
+    public static func showDialog(viewController: UIViewController? = nil, animated: Bool = true, initialize: ((Self) -> ())? = nil) {
         let dialog = Self.getInstance()
         dialog.view.backgroundColor = UIColor.clear // これを呼ばないとストーリーボードで定義したUIがまだ生成されていないため、下の設定部分で落ちる
         dialog.backgroundView.alpha = 0
@@ -50,11 +50,11 @@ extension DialogPresentable where Self: UIViewController {
         }
     }
     
-    func showDialog() {
+    public func showDialog() {
         showDialog(animated: true)
     }
     
-    func showDialog(animated: Bool) {
+    public func showDialog(animated: Bool) {
         UIView.animate(withDuration: animated ? duration : 0,
                        delay: 0,
                        options: .curveEaseInOut,
@@ -66,11 +66,11 @@ extension DialogPresentable where Self: UIViewController {
         })
     }
     
-    func hideDialog(completion:(() -> ())? = nil) {
+    public func hideDialog(completion:(() -> ())? = nil) {
         hideDialog(animated: true, completion: completion)
     }
     
-    func hideDialog(animated: Bool, completion:(() -> ())? = nil) {
+    public func hideDialog(animated: Bool, completion:(() -> ())? = nil) {
         DispatchQueue.main.async {
             UIView.animate(
                 withDuration: animated ? duration : 0,

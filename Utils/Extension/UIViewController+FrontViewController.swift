@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIViewController {
-    static func getFrontViewController() -> UIViewController {
+    public static func getFrontViewController() -> UIViewController {
         var topViewController: UIViewController = UIApplication.shared.keyWindow!.rootViewController!
         while topViewController.presentedViewController != nil {
             topViewController = topViewController.presentedViewController!

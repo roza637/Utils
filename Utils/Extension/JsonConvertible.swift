@@ -9,18 +9,18 @@
 import Foundation
 import CoreGraphics
 
-protocol JsonConvertible {
+public protocol JsonConvertible {
     var jsonObject: Any {get}
 }
 
-extension JsonConvertible {
-    var jsonObject: Any {
+public extension JsonConvertible {
+    public var jsonObject: Any {
         return self
     }
 }
 
-extension JsonConvertible {
-    var jsonDictionary: [String: Any] {
+public extension JsonConvertible {
+    public var jsonDictionary: [String: Any] {
         var dic = [String: Any]()
         Mirror(reflecting: self).children.forEach { property in
             let value = property.value as! JsonConvertible
@@ -46,14 +46,14 @@ extension Bool: JsonConvertible {
 }
 
 extension CGPoint: JsonConvertible {
-    var jsonObject: Any {
+    public var jsonObject: Any {
         return ["x": self.x,
                 "y": self.y]
     }
 }
 
 extension Array: JsonConvertible {
-    var jsonObject: Any {
+    public var jsonObject: Any {
         return self.map({ element -> Any in
             let value = element as! JsonConvertible
             return value.jsonObject
@@ -62,7 +62,7 @@ extension Array: JsonConvertible {
 }
 
 extension Dictionary: JsonConvertible {
-    var jsonObject: Any {
+    public var jsonObject: Any {
         var dic = [String : Any]()
         self.forEach({(key, value)  in
             let convertibleKey = key as! JsonConvertible

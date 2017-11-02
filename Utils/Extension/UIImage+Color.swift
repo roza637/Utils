@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 extension UIImage {
-    var color: UIColor {
+    public var color: UIColor {
         return color()
     }
     
-    func color(point: CGPoint = CGPoint.zero) -> UIColor {
+    public func color(point: CGPoint = CGPoint.zero) -> UIColor {
         //ピクセルデータ取得してバイナリ化
         let pixelData = self.cgImage!.dataProvider!.data
         let data: UnsafePointer = CFDataGetBytePtr(pixelData)

@@ -8,9 +8,9 @@
 
 import Foundation
 
-extension NSDecimalNumber {
+public extension NSDecimalNumber {
     
-    var absoluteValue: NSDecimalNumber {
+    public var absoluteValue: NSDecimalNumber {
         guard self != NSDecimalNumber.notANumber else {
             return self
         }
@@ -23,7 +23,7 @@ extension NSDecimalNumber {
         }
     }
     
-    var optional: NSDecimalNumber? {
+    public var optional: NSDecimalNumber? {
         if self == NSDecimalNumber.notANumber {
             return nil
         }
@@ -32,8 +32,8 @@ extension NSDecimalNumber {
     }
 }
 
-extension NSDecimalNumber {
-    func roundedString(roundingMode: NumberFormatter.RoundingMode, scale: Int) -> String {
+public extension NSDecimalNumber {
+    public func roundedString(roundingMode: NumberFormatter.RoundingMode, scale: Int) -> String {
         let formatter = NumberFormatter()
         formatter.roundingMode = roundingMode
         formatter.minimumFractionDigits = scale

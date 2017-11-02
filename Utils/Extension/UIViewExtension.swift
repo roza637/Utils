@@ -11,19 +11,19 @@ import UIKit
 
 extension UIView {
 
-    func addSubviews(subviews: [UIView]) {
+    public func addSubviews(subviews: [UIView]) {
         subviews.forEach{self.addSubview($0)}
     }
     
-    func addSubviews(subviews: UIView...) {
+    public func addSubviews(subviews: UIView...) {
         self.addSubviews(subviews: subviews)
     }
     
-    func removeAllSubviews() {
+    public func removeAllSubviews() {
         self.subviews.forEach{ $0.removeFromSuperview() }
     }
     
-    func setCornerRadius(radius: CGFloat, corner: UIRectCorner) {
+    public func setCornerRadius(radius: CGFloat, corner: UIRectCorner) {
         let maskPath = UIBezierPath(roundedRect: bounds,
                                     byRoundingCorners: corner,
                                     cornerRadii: CGSize.init(width: radius, height: radius))
@@ -33,7 +33,7 @@ extension UIView {
         layer.mask = maskLayer
     }
     
-    func addChildConstraints(for childView: UIView, insets: UIEdgeInsets = .zero) {
+    public func addChildConstraints(for childView: UIView, insets: UIEdgeInsets = .zero) {
         childView.translatesAutoresizingMaskIntoConstraints = false
         topAnchor.constraint(equalTo: childView.topAnchor, constant: insets.top).isActive = true
         bottomAnchor.constraint(equalTo: childView.bottomAnchor, constant: insets.bottom).isActive = true

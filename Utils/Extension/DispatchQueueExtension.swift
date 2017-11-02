@@ -8,8 +8,8 @@
 
 import Foundation
 
-extension DispatchQueue {
-    func after(delay: Double, execute: @escaping () -> Void) {
+public extension DispatchQueue {
+    public func after(delay: Double, execute: @escaping () -> Void) {
         self.asyncAfter(deadline: .now() + delay, execute: execute)
     }
 }

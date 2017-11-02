@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UIAlertController {
-    static func showAlert(viewController: UIViewController, title: String?, message: String?, actions: [UIAlertAction]) {
+    public static func showAlert(viewController: UIViewController, title: String?, message: String?, actions: [UIAlertAction]) {
         guard !(viewController is UIAlertController) else {
             return
         }
@@ -22,7 +22,7 @@ extension UIAlertController {
         }
     }
     
-    static func showAction(viewController: UIViewController, title: String?, message: String?, actions: [UIAlertAction]) {
+    public static func showAction(viewController: UIViewController, title: String?, message: String?, actions: [UIAlertAction]) {
         guard !(viewController is UIAlertController) else {
             return
         }
@@ -34,14 +34,14 @@ extension UIAlertController {
         }
     }
     
-    static func showAlert(viewController: UIViewController, title: String?, message: String?, negative: String = "キャンセル", positive: String = "OK", onPositive: @escaping () -> (), onNegative: (() -> ())? = nil) {
+    public static func showAlert(viewController: UIViewController, title: String?, message: String?, negative: String = "キャンセル", positive: String = "OK", onPositive: @escaping () -> (), onNegative: (() -> ())? = nil) {
         showAlert(viewController: viewController, title: title, message: message, actions: [
             UIAlertAction(title: negative, style: .cancel, handler: { _ in onNegative?() }),
             UIAlertAction(title: positive, style: .default, handler: { _ in onPositive() })
             ])
     }
     
-    static func showAlert(viewController: UIViewController, title: String?, message: String?, done: String = "OK", onDone: (() -> ())? = nil) {
+    public static func showAlert(viewController: UIViewController, title: String?, message: String?, done: String = "OK", onDone: (() -> ())? = nil) {
         showAlert(viewController: viewController, title: title, message: message, actions: [
             UIAlertAction(title: done, style: .default, handler: { _ in onDone?() })
             ])

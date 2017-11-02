@@ -8,18 +8,18 @@
 
 import Foundation
 
-func + (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
+public func + (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
     return lhs.adding(rhs)
 }
 
-func - (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
+public func - (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
     return lhs.subtracting(rhs)
 }
 
-func * (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
+public func * (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
     return lhs.multiplying(by: rhs)
 }
 
-func / (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
+public func / (lhs: NSDecimalNumber, rhs: NSDecimalNumber) -> NSDecimalNumber {
     return lhs.dividing(by: rhs)
 }
