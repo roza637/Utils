@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PickerViewController : UIViewController, StoryboardInstantiatable {
-    static func showPicker(viewController: UIViewController , items:[PickerItemViewModel], selectedIndex: Int = 0) {
+public class PickerViewController : UIViewController, StoryboardInstantiatable {
+    public static func showPicker(viewController: UIViewController , items:[PickerItemViewModel], selectedIndex: Int = 0) {
         let picker = PickerViewController.instantiate()
         picker.items = items
         picker.selectedIndex = selectedIndex
@@ -20,8 +20,8 @@ class PickerViewController : UIViewController, StoryboardInstantiatable {
         }
     }
     
-    var items: [PickerItemViewModel] = []
-    var selectedIndex : Int = 0
+    fileprivate var items: [PickerItemViewModel] = []
+    fileprivate var selectedIndex : Int = 0
     
     @IBOutlet private weak var pickerView :UIPickerView?
     @IBOutlet private weak var backgroundView :UIView?
@@ -29,7 +29,7 @@ class PickerViewController : UIViewController, StoryboardInstantiatable {
     
     var completion :((String) -> ())?
     
-    override var modalPresentationStyle: UIModalPresentationStyle {
+    override public var modalPresentationStyle: UIModalPresentationStyle {
         get {
             return UIModalPresentationStyle.overCurrentContext
         }
@@ -38,7 +38,7 @@ class PickerViewController : UIViewController, StoryboardInstantiatable {
         }
     }
     
-    func showPicker() {
+    private func showPicker() {
         pickerView?.selectRow(selectedIndex, inComponent: 0, animated: false)
         UIView.animate(withDuration: 0.25) {
             self.backgroundView!.alpha = 0.6
@@ -48,7 +48,7 @@ class PickerViewController : UIViewController, StoryboardInstantiatable {
     }
 
     
-    func showPicker(completion:@escaping (String) -> ()) {
+    private func showPicker(completion:@escaping (String) -> ()) {
         self.completion = completion
         UIView.animate(withDuration: 0.25) {
             self.backgroundView!.alpha = 0.6
@@ -85,31 +85,31 @@ class PickerViewController : UIViewController, StoryboardInstantiatable {
 }
 
 extension PickerViewController : UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+    public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return items.count
     }
 }
 
 extension PickerViewController : UIPickerViewDelegate {
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    public func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return items[row].title
     }
     
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    public func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedIndex = row
     }
     
 }
 
-class PickerItemViewModel {
-    let title: String
-    let onSelected: (() -> ())?
+public class PickerItemViewModel {
+    public let title: String
+    public let onSelected: (() -> ())?
     
-    init(title: String, onSelected: (() -> ())? = nil) {
+    public init(title: String, onSelected: (() -> ())? = nil) {
         self.title = title
         self.onSelected = onSelected
     }

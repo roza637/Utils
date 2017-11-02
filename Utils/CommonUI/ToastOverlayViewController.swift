@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-class ToastManager {
+public class ToastManager {
     private let queue = DispatchQueue(label: "ToastManager Show Message Queue")
     
-    static var shared: ToastManager = ToastManager()
+    public static var shared: ToastManager = ToastManager()
     private init() { }
     
-    func show(message: String, duration: TimeInterval = 3) {
+    public func show(message: String, duration: TimeInterval = 3) {
         queue.async {
             ToastOverlayViewController.show(message: message, duration: duration)
         }

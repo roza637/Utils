@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-protocol OverlayPresentation {
+public protocol OverlayPresentation {
     var window: UIWindow?{get set}
     
     func showAnimation()
@@ -21,7 +21,7 @@ protocol OverlayPresentation {
     func didHideWindow()
 }
 
-extension OverlayPresentation where Self: UIViewController {
+public extension OverlayPresentation where Self: UIViewController {
     
     private func createWindow() -> UIWindow {
         let frame = UIScreen.main.bounds
@@ -32,7 +32,7 @@ extension OverlayPresentation where Self: UIViewController {
         return window
     }
     
-    func showOverlay(duration: Double) {
+    public func showOverlay(duration: Double) {
         var s = self
         DispatchQueue.main.async {
             s.window = s.createWindow()
@@ -47,7 +47,7 @@ extension OverlayPresentation where Self: UIViewController {
         }
     }
     
-    func showOverlay() {
+    public func showOverlay() {
         var s = self
         DispatchQueue.main.async {
             s.window = s.createWindow()
@@ -58,7 +58,7 @@ extension OverlayPresentation where Self: UIViewController {
         }
     }
     
-    func hideOverlay() {
+    public func hideOverlay() {
         var s = self
         DispatchQueue.main.async {
             UIView.animate(withDuration: s.hideAnimateDuration, animations: {
@@ -74,7 +74,7 @@ extension OverlayPresentation where Self: UIViewController {
         }
     }
     
-    func didHideWindow() {
+    public func didHideWindow() {
         // Optional Method
     }
 }

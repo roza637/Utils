@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class TouchThroughWindow: UIWindow {
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+public class TouchThroughWindow: UIWindow {
+    override public func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
         let view = super.hitTest(point, with: event)
         if view == self {
             return nil

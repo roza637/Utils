@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-class DatePickerViewController : UIViewController, StoryboardInstantiatable {
-    static func showPicker(viewController: UIViewController , date: Date? = Date(), minDate: Date? = nil, maxDate: Date? = nil, completion: @escaping (Date) -> ()) {
+public class DatePickerViewController : UIViewController, StoryboardInstantiatable {
+    public static func showPicker(viewController: UIViewController , date: Date? = Date(), minDate: Date? = nil, maxDate: Date? = nil, completion: @escaping (Date) -> ()) {
         let picker = DatePickerViewController.instantiate()
         picker.selectedDate = date ?? Date()
         picker.minDate = minDate
@@ -31,15 +31,15 @@ class DatePickerViewController : UIViewController, StoryboardInstantiatable {
     @IBOutlet private weak var backgroundView :UIView?
     @IBOutlet private weak var pickerBackY :NSLayoutConstraint?
     
-    var completion :((Date) -> ())?
+    private var completion :((Date) -> ())?
     
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
         pickerView?.date = selectedDate!
         pickerView?.minimumDate = minDate
         pickerView?.maximumDate = maxDate
     }
-    override var modalPresentationStyle: UIModalPresentationStyle {
+    override public var modalPresentationStyle: UIModalPresentationStyle {
         get {
             return UIModalPresentationStyle.overCurrentContext
         }
@@ -48,7 +48,7 @@ class DatePickerViewController : UIViewController, StoryboardInstantiatable {
         }
     }
     
-    func showPicker() {
+    private func showPicker() {
         UIView.animate(withDuration: 0.25) {
             self.backgroundView!.alpha = 0.6
             self.pickerBackY!.constant = 0
@@ -56,7 +56,7 @@ class DatePickerViewController : UIViewController, StoryboardInstantiatable {
         }
     }
     
-    func showPicker(completion:@escaping (Date) -> ()) {
+    private func showPicker(completion:@escaping (Date) -> ()) {
         self.completion = completion
         UIView.animate(withDuration: 0.25) {
             self.backgroundView!.alpha = 0.6
