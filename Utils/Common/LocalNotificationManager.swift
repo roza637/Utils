@@ -81,13 +81,13 @@ protocol LocalNotificationManagerProtocol {
 }
 
 
-class LocalNotification {
-    var message: String?
-    var fireDate: Date?
-    var identifier: String
-    var userInfo: [AnyHashable : Any]?
+public class LocalNotification {
+    public var message: String?
+    public var fireDate: Date?
+    public var identifier: String
+    public var userInfo: [AnyHashable : Any]?
     
-    init(message: String?, fireDate: Date? = nil, identifier: String = NSUUID().uuidString, userInfo: [AnyHashable : Any]? = nil) {
+    public init(message: String?, fireDate: Date? = nil, identifier: String = NSUUID().uuidString, userInfo: [AnyHashable : Any]? = nil) {
         self.message = message
         self.fireDate = fireDate
         self.identifier = identifier
@@ -95,16 +95,16 @@ class LocalNotification {
     }
     
     @available(iOS 10.0, *)
-    convenience init(request: UNNotificationRequest) {
+    public convenience init(request: UNNotificationRequest) {
         let trigger = request.trigger as? UNCalendarNotificationTrigger
         self.init(message: request.content.body, fireDate: trigger?.dateComponents.date, identifier: request.identifier, userInfo: request.content.userInfo)
     }
     
-    func register() {
+    public func register() {
         LocalNotificationManager.instance.scheduleNotification(self)
     }
     
-    func cancel() {
+    public func cancel() {
         LocalNotificationManager.instance.cancelNotification(identifier: self.identifier)
     }
     
@@ -119,7 +119,7 @@ class LocalNotification {
     }
     
     @available(iOS 10.0, *)
-    var notificationrequest: UNNotificationRequest {
+    fileprivate var notificationrequest: UNNotificationRequest {
         let content = UNMutableNotificationContent()
         content.body = self.message ?? ""
         content.userInfo = self.userInfo ?? [:]

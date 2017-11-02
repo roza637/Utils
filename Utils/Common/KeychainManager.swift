@@ -8,33 +8,33 @@
 
 import Foundation
 
-class KeychainManager {
+public class KeychainManager {
     
     // MARK: ErrorTypes
-    enum KeychainError: Error {
+    private enum KeychainError: Error {
         case ItemNotFound
         case UnhandledError(status: OSStatus)
     }
     
     // MARK: - keychain configuration
-    struct Config {
+    public struct Config {
         var serviceName = ""
         var accessGroup: String? = nil
     }
     
-    var config: Config
+    private(set) var config: Config
     
-    convenience init(serviceName: String, accessGroup: String? = nil) {
+    public convenience init(serviceName: String, accessGroup: String? = nil) {
         self.init(config: Config(serviceName: serviceName, accessGroup: accessGroup))
     }
     
-    init(config: Config) {
+    public init(config: Config) {
         self.config = config
     }
     
     
     // MARK: - public keychain access
-    func saveString(key: String, value: String?) {
+    public func saveString(key: String, value: String?) {
         if let value = value {
             _ = self.save(key: key, data: value.data(using: .utf8)!)
         } else {
@@ -42,7 +42,7 @@ class KeychainManager {
         }
     }
 
-    func loadString(key: String) -> String? {
+    public func loadString(key: String) -> String? {
         if let data = self.load(key: key) {
             return String(data: data, encoding: .utf8)
         } else {
@@ -50,7 +50,7 @@ class KeychainManager {
         }
     } 
     
-    func deleteString(key: String) {
+    public func deleteString(key: String) {
         _ = self.delete(key: key)
     }
     

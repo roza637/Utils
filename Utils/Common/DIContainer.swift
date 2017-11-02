@@ -8,22 +8,22 @@
 
 import Foundation
 
-class DIContainer {
+public class DIContainer {
     
-    init(declaration:(DIContainer) -> ()) {
+    public init(declaration:(DIContainer) -> ()) {
         declaration(self)
     }
     
     private var creationMap: [String : ((DIContainer) -> Any, isSingleton: Bool)] = [:]
     private var singletonMap: [String : Any] = [:]
     
-    func register<T>(type: T.Type, isSingleton: Bool = true, creation: @escaping (DIContainer) -> T) {
+    public func register<T>(type: T.Type, isSingleton: Bool = true, creation: @escaping (DIContainer) -> T) {
         let key = String(describing: type)
         creationMap[key] = (creation, isSingleton)
         singletonMap[key] = nil
     }
     
-    func resolve<T>(type: T.Type) -> T {
+    public func resolve<T>(type: T.Type) -> T {
         let key = String(describing: type)
         let creation = creationMap[key]
         
