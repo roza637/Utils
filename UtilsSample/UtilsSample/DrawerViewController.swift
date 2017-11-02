@@ -7,8 +7,8 @@
 //
 
 import UIKit
+import Utils
 
-//TODO: α版のドロワー用仮画面
 final class DrawerViewController: UIViewController, StoryboardInstantiatable, DrawerPresentable {
     
     static func getInstance() -> DrawerViewController {

@@ -12,6 +12,8 @@
 		193DD2C11FAAE95500D5E139 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193DD2BF1FAAE95500D5E139 /* Main.storyboard */; };
 		193DD2C31FAAE95500D5E139 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 193DD2C21FAAE95500D5E139 /* Assets.xcassets */; };
 		193DD2C61FAAE95500D5E139 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 193DD2C41FAAE95500D5E139 /* LaunchScreen.storyboard */; };
+		19C19EB81FAB19400084EFAE /* DrawerViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19C19EB61FAB19400084EFAE /* DrawerViewController.storyboard */; };
+		19C19EB91FAB19400084EFAE /* DrawerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C19EB71FAB19400084EFAE /* DrawerViewController.swift */; };
 		19D4AD911FAAEBFA00B7289D /* Utils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D4AD901FAAEBFA00B7289D /* Utils.framework */; };
 		19D4AD921FAAEBFA00B7289D /* Utils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 19D4AD901FAAEBFA00B7289D /* Utils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -38,6 +40,8 @@
 		193DD2C21FAAE95500D5E139 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		193DD2C51FAAE95500D5E139 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		193DD2C71FAAE95500D5E139 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19C19EB61FAB19400084EFAE /* DrawerViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = DrawerViewController.storyboard; sourceTree = "<group>"; };
+		19C19EB71FAB19400084EFAE /* DrawerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawerViewController.swift; sourceTree = "<group>"; };
 		19D4AD901FAAEBFA00B7289D /* Utils.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Utils.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -73,6 +77,8 @@
 		193DD2BA1FAAE95500D5E139 /* UtilsSample */ = {
 			isa = PBXGroup;
 			children = (
+				19C19EB61FAB19400084EFAE /* DrawerViewController.storyboard */,
+				19C19EB71FAB19400084EFAE /* DrawerViewController.swift */,
 				193DD2BB1FAAE95500D5E139 /* AppDelegate.swift */,
 				193DD2BD1FAAE95500D5E139 /* ViewController.swift */,
 				193DD2BF1FAAE95500D5E139 /* Main.storyboard */,
@@ -145,6 +151,7 @@
 			files = (
 				193DD2C61FAAE95500D5E139 /* LaunchScreen.storyboard in Resources */,
 				193DD2C31FAAE95500D5E139 /* Assets.xcassets in Resources */,
+				19C19EB81FAB19400084EFAE /* DrawerViewController.storyboard in Resources */,
 				193DD2C11FAAE95500D5E139 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -158,6 +165,7 @@
 			files = (
 				193DD2BE1FAAE95500D5E139 /* ViewController.swift in Sources */,
 				193DD2BC1FAAE95500D5E139 /* AppDelegate.swift in Sources */,
+				19C19EB91FAB19400084EFAE /* DrawerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
