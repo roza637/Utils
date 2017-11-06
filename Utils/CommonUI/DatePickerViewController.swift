@@ -9,23 +9,41 @@
 import Foundation
 import UIKit
 
-public class DatePickerViewController : UIViewController, StoryboardInstantiatable {
+public class DatePickerViewController : UIViewController, StoryboardInstantiatable, OverlayPresentation {
     
     public static var bundle: Bundle? {
         return Bundle(for: DatePickerViewController.self)
     }
     
-    public static func showPicker(viewController: UIViewController , date: Date? = Date(), minDate: Date? = nil, maxDate: Date? = nil, completion: @escaping (Date) -> ()) {
+    public var window: UIWindow?
+    public var showAnimateDuration: TimeInterval = 0.2
+    public var hideAnimateDuration: TimeInterval = 0.2
+    public func showAnimation() {
+        self.backgroundView!.alpha = 0.6
+        self.pickerBackY!.constant = 0
+        self.view.layoutIfNeeded()
+    }
+    
+    public func hideAnimation() {
+        self.backgroundView!.alpha = 0
+        self.pickerBackY!.constant = -220
+        self.view.layoutIfNeeded()
+    }
+    
+    public func didHideWindow() {
+        if self.selectedDate != nil {
+            self.completion?(self.selectedDate!)
+        }
+        self.completion = nil
+    }
+    
+    public static func showPicker(date: Date? = Date(), minDate: Date? = nil, maxDate: Date? = nil, completion: @escaping (Date) -> ()) {
         let picker = DatePickerViewController.instantiate()
         picker.selectedDate = date ?? Date()
         picker.minDate = minDate
         picker.maxDate = maxDate
         picker.completion = completion
-        if let tabBarController = viewController.tabBarController {
-            tabBarController.present(picker, animated: false) {picker.showPicker()}
-        } else {
-            viewController.present(picker, animated: false) {picker.showPicker()}
-        }
+        picker.showOverlay()
     }
 
     private var selectedDate : Date? = Date()
@@ -44,55 +62,15 @@ public class DatePickerViewController : UIViewController, StoryboardInstantiatab
         pickerView?.minimumDate = minDate
         pickerView?.maximumDate = maxDate
     }
-    override public var modalPresentationStyle: UIModalPresentationStyle {
-        get {
-            return UIModalPresentationStyle.overCurrentContext
-        }
-        set {
-            super.modalPresentationStyle = newValue
-        }
-    }
-    
-    private func showPicker() {
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundView!.alpha = 0.6
-            self.pickerBackY!.constant = 0
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    private func showPicker(completion:@escaping (Date) -> ()) {
-        self.completion = completion
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundView!.alpha = 0.6
-            self.pickerBackY!.constant = 0
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    private func hidePicker() {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.backgroundView!.alpha = 0
-            self.pickerBackY!.constant = -220
-            self.view.layoutIfNeeded()
-        }) { finished in
-            self.dismiss(animated: false) {
-                if self.selectedDate != nil {
-                    self.completion?(self.selectedDate!)
-                }
-                self.completion = nil
-            }
-        }
-    }
     
     @IBAction private func complete() {
         selectedDate = pickerView?.date
-        self.hidePicker()
+        self.hideOverlay()
     }
     
     @IBAction private func cancel() {
         self.completion = nil
         selectedDate = nil
-        self.hidePicker()
+        self.hideOverlay()
     }
 }
