@@ -46,6 +46,7 @@
 		195EEABD1FA96EFF0058A849 /* UIImageView+TemplateImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB81FA96EFF0058A849 /* UIImageView+TemplateImage.swift */; };
 		195EEABE1FA96EFF0058A849 /* UIView+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB91FA96EFF0058A849 /* UIView+Corner.swift */; };
 		195EEAC11FA973960058A849 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAC01FA973960058A849 /* UserDefaultExtension.swift */; };
+		19C19EBB1FAB1D210084EFAE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C19EBA1FAB1D210084EFAE /* UIButtonExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 		195EEAB81FA96EFF0058A849 /* UIImageView+TemplateImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+TemplateImage.swift"; sourceTree = "<group>"; };
 		195EEAB91FA96EFF0058A849 /* UIView+Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corner.swift"; sourceTree = "<group>"; };
 		195EEAC01FA973960058A849 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
+		19C19EBA1FAB1D210084EFAE /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				195EEA8D1FA701220058A849 /* UIViewController+FrontViewController.swift */,
 				195EEA8E1FA701220058A849 /* UIViewController+Storyboard.swift */,
 				195EEA8F1FA701220058A849 /* UIViewExtension.swift */,
+				19C19EBA1FAB1D210084EFAE /* UIButtonExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -294,6 +297,7 @@
 				195EEA721FA700F50058A849 /* PickerViewController.swift in Sources */,
 				195EEAA31FA701220058A849 /* UIViewController+DialogPresentable.swift in Sources */,
 				195EEAA01FA701220058A849 /* UIImage+Color.swift in Sources */,
+				19C19EBB1FAB1D210084EFAE /* UIButtonExtension.swift in Sources */,
 				195EEA731FA700F50058A849 /* ToastOverlayViewController.swift in Sources */,
 				195EEAC11FA973960058A849 /* UserDefaultExtension.swift in Sources */,
 				195EEA701FA700F50058A849 /* OverlayPresentation.swift in Sources */,
