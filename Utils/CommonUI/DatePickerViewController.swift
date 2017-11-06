@@ -15,7 +15,6 @@ public class DatePickerViewController : UIViewController, StoryboardInstantiatab
         return Bundle(for: DatePickerViewController.self)
     }
     
-    public var window: UIWindow?
     public var showAnimateDuration: TimeInterval = 0.2
     public var hideAnimateDuration: TimeInterval = 0.2
     public func showAnimation() {

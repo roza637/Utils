@@ -36,8 +36,6 @@ fileprivate class ToastOverlayViewController: UIViewController, OverlayPresentat
         semaphore.wait()
     }
     
-    var window: UIWindow?
-    
     private var label = UILabel()
     
     init(message: String) {

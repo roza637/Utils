@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 public protocol OverlayPresentation {
-    var window: UIWindow?{get set}
     
     func showAnimation()
     var showAnimateDuration: TimeInterval{get}
@@ -19,6 +18,19 @@ public protocol OverlayPresentation {
     var hideAnimateDuration: TimeInterval{get}
     
     func didHideWindow()
+}
+
+fileprivate var windowKey: String = "UIViewControllerWindowKey"
+
+fileprivate extension UIViewController {
+    var window: UIWindow? {
+        get {
+            return objc_getAssociatedObject(self, &windowKey) as? UIWindow
+        }
+        set {
+            objc_setAssociatedObject(self, &windowKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
 }
 
 public extension OverlayPresentation where Self: UIViewController {
