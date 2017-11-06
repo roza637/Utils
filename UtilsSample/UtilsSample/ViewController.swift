@@ -20,15 +20,17 @@ class ViewController: UIViewController {
         button1.onTouchDown{ _ in
             ToastManager.shared.show(message: "button1 touchdown")
         }
-        button1.onTouchUpInside{ _ in
-            ToastManager.shared.show(message: "button1 touchup")
+        button1.onTouchUpInside{ [weak self] _ in
+            PickerViewController.showPicker(items: (0...10).map{ String($0) }.map{ str in PickerItemViewModel(title: str, onSelected: { self?.button1.setTitle(str, for: .normal) }) })
         }
         
         button2.onTouchDown{ _ in
             ToastManager.shared.show(message: "button2 touchdown")
         }
-        button2.onTouchUpInside{ _ in
-            ToastManager.shared.show(message: "button2 touchup")
+        button2.onTouchUpInside{ [weak self] _ in
+            DatePickerViewController.showPicker(completion: {
+                self?.button2.setTitle($0.string(format: "yyyyMMdd"), for: .normal)
+            })
         }
     }
 
