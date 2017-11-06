@@ -8,21 +8,39 @@
 
 import UIKit
 
-public class PickerViewController : UIViewController, StoryboardInstantiatable {
+public class PickerViewController : UIViewController, StoryboardInstantiatable, OverlayPresentation {
     
     public static var bundle: Bundle? {
         return Bundle(for: PickerViewController.self)
     }
     
-    public static func showPicker(viewController: UIViewController , items:[PickerItemViewModel], selectedIndex: Int = 0) {
+    public var showAnimateDuration: TimeInterval = 0.2
+    public var hideAnimateDuration: TimeInterval = 0.2
+    public func showAnimation() {
+        self.backgroundView!.alpha = 0.6
+        self.pickerBackY!.constant = 0
+        self.view.layoutIfNeeded()
+    }
+    
+    public func hideAnimation() {
+        self.backgroundView!.alpha = 0
+        self.pickerBackY!.constant = -220
+        self.view.layoutIfNeeded()
+    }
+    
+    public func didHideWindow() {
+        if self.selectedIndex >= 0 {
+            self.items[self.selectedIndex].onSelected?()
+        }
+        self.completion?()
+        self.completion = nil
+    }
+    
+    public static func showPicker(items:[PickerItemViewModel], selectedIndex: Int = 0) {
         let picker = PickerViewController.instantiate()
         picker.items = items
         picker.selectedIndex = selectedIndex
-        if let tabBarController = viewController.tabBarController {
-            tabBarController.present(picker, animated: false) {picker.showPicker()}
-        } else {
-            viewController.present(picker, animated: false) {picker.showPicker()}
-        }
+        picker.showOverlay()
     }
     
     fileprivate var items: [PickerItemViewModel] = []
@@ -32,7 +50,7 @@ public class PickerViewController : UIViewController, StoryboardInstantiatable {
     @IBOutlet private weak var backgroundView :UIView?
     @IBOutlet private weak var pickerBackY :NSLayoutConstraint?
     
-    var completion :((String) -> ())?
+    var completion :(() -> ())?
     
     override public var modalPresentationStyle: UIModalPresentationStyle {
         get {
@@ -43,49 +61,14 @@ public class PickerViewController : UIViewController, StoryboardInstantiatable {
         }
     }
     
-    private func showPicker() {
-        pickerView?.selectRow(selectedIndex, inComponent: 0, animated: false)
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundView!.alpha = 0.6
-            self.pickerBackY!.constant = 0
-            self.view.layoutIfNeeded()
-        }
-    }
-
-    
-    private func showPicker(completion:@escaping (String) -> ()) {
-        self.completion = completion
-        UIView.animate(withDuration: 0.25) {
-            self.backgroundView!.alpha = 0.6
-            self.pickerBackY!.constant = 0
-            self.view.layoutIfNeeded()
-        }
-    }
-    
-    private func hidePicker() {
-        UIView.animate(withDuration: 0.25, animations: {
-            self.backgroundView!.alpha = 0
-            self.pickerBackY!.constant = -220
-            self.view.layoutIfNeeded()
-        }) { finished in
-            self.dismiss(animated: false) {
-                self.completion?("a")
-                self.completion = nil
-                if self.selectedIndex >= 0 {
-                    self.items[self.selectedIndex].onSelected?()
-                }
-            }
-        }
-    }
-    
     @IBAction private func complete() {
-        self.hidePicker()
+        self.hideOverlay()
     }
     
     @IBAction private func cancel() {
         self.completion = nil
         selectedIndex = -1
-        self.hidePicker()
+        self.hideOverlay()
     }
 }
 
