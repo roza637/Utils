@@ -7,12 +7,29 @@
 //
 
 import UIKit
+import Utils
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var button1: UIButton!
+    @IBOutlet weak var button2: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        button1.onTouchDown{ _ in
+            ToastManager.shared.show(message: "button1 touchdown")
+        }
+        button1.onTouchUpInside{ _ in
+            ToastManager.shared.show(message: "button1 touchup")
+        }
+        
+        button2.onTouchDown{ _ in
+            ToastManager.shared.show(message: "button2 touchdown")
+        }
+        button2.onTouchUpInside{ _ in
+            ToastManager.shared.show(message: "button2 touchup")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,7 +38,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func taped() {
-        DrawerViewController.showDrawer()
+
     }
 }
 
