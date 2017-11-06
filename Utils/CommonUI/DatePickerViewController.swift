@@ -10,6 +10,11 @@ import Foundation
 import UIKit
 
 public class DatePickerViewController : UIViewController, StoryboardInstantiatable {
+    
+    public static var bundle: Bundle? {
+        return Bundle(for: DatePickerViewController.self)
+    }
+    
     public static func showPicker(viewController: UIViewController , date: Date? = Date(), minDate: Date? = nil, maxDate: Date? = nil, completion: @escaping (Date) -> ()) {
         let picker = DatePickerViewController.instantiate()
         picker.selectedDate = date ?? Date()

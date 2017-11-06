@@ -9,6 +9,11 @@
 import UIKit
 
 public class PickerViewController : UIViewController, StoryboardInstantiatable {
+    
+    public static var bundle: Bundle? {
+        return Bundle(for: PickerViewController.self)
+    }
+    
     public static func showPicker(viewController: UIViewController , items:[PickerItemViewModel], selectedIndex: Int = 0) {
         let picker = PickerViewController.instantiate()
         picker.items = items
