@@ -52,9 +52,11 @@ public extension OverlayPresentation where Self: UIViewController {
         DispatchQueue.main.async {
             s.window = s.createWindow()
             s.window?.makeKeyAndVisible()
-            UIView.animate(withDuration: s.showAnimateDuration, animations: {
-                s.showAnimation()
-            })
+            DispatchQueue.main.async {
+                UIView.animate(withDuration: s.showAnimateDuration, animations: {
+                    s.showAnimation()
+                })
+            }
         }
     }
     
