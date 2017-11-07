@@ -29,7 +29,7 @@ extension UIButton {
         }
         
         set {
-            objc_setAssociatedObject(self, &ButtonEventHandlerKey, newValue, .OBJC_ASSOCIATION_COPY_NONATOMIC)
+            objc_setAssociatedObject(self, &ButtonEventHandlerKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }
