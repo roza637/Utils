@@ -47,6 +47,7 @@
 		195EEABE1FA96EFF0058A849 /* UIView+Corner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAB91FA96EFF0058A849 /* UIView+Corner.swift */; };
 		195EEAC11FA973960058A849 /* UserDefaultExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195EEAC01FA973960058A849 /* UserDefaultExtension.swift */; };
 		19C19EBB1FAB1D210084EFAE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C19EBA1FAB1D210084EFAE /* UIButtonExtension.swift */; };
+		19CD2D271FB18AB100AE6A22 /* DocumentUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CD2D261FB18AB100AE6A22 /* DocumentUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		195EEAB91FA96EFF0058A849 /* UIView+Corner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Corner.swift"; sourceTree = "<group>"; };
 		195EEAC01FA973960058A849 /* UserDefaultExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultExtension.swift; sourceTree = "<group>"; };
 		19C19EBA1FAB1D210084EFAE /* UIButtonExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		19CD2D261FB18AB100AE6A22 /* DocumentUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 				195EEA5E1FA700DD0058A849 /* DIContainer.swift */,
 				195EEA5F1FA700DD0058A849 /* LocalNotificationManager.swift */,
 				195EEAB21FA960110058A849 /* KeychainManager.swift */,
+				19CD2D261FB18AB100AE6A22 /* DocumentUtil.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 			files = (
 				195EEA9E1FA701220058A849 /* UIDevice+Platform.swift in Sources */,
 				195EEA751FA700F50058A849 /* TouchThroughWindow.swift in Sources */,
+				19CD2D271FB18AB100AE6A22 /* DocumentUtil.swift in Sources */,
 				195EEA921FA701220058A849 /* DateExtension.swift in Sources */,
 				195EEA741FA700F50058A849 /* TouchThroughView.swift in Sources */,
 				195EEAA91FA701E70058A849 /* DispatchQueueExtension.swift in Sources */,
