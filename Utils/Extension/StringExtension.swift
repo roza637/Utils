@@ -71,6 +71,9 @@ public extension String {
         return URL(string: self)
     }
     
+    public var fileUrl: URL {
+        return URL(fileURLWithPath: self)
+    }
 }
 
 public extension String {
