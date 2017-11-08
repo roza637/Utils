@@ -16,7 +16,7 @@ public class DocumentUtil {
         case caches
         case tmp
         
-        var path: String {
+        public var path: String {
             switch self {
             case .documents:
                 return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
