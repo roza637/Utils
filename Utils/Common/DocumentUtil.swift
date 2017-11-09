@@ -40,6 +40,10 @@ public class DocumentUtil {
         }
     }
     
+    public static func listPath(dir: Directory) -> [String] {
+        return list(dir: dir).map{ "\(dir.path)/\($0)" }
+    }
+    
     public static func write(data: Data, to dir: Directory, name: String) {
         FileManager.default.createFile(atPath: "\(dir.path)/\(name)", contents: data, attributes: nil)
     }
