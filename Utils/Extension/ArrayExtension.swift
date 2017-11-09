@@ -28,6 +28,14 @@ public extension Array {
             a.filter{ isEquivalent($0, e) }.count > 0 ? a : a + [e]
         }
     }
+    
+    public var random: Element? {
+        return self.shuffled.first
+    }
+    
+    public var shuffled: [Element] {
+        return self.map{ ($0, arc4random()) }.sorted{ $0.0.1 < $0.1.1 }.map{ $0.0 }
+    }
 }
 
 public extension Array {
