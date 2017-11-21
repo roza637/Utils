@@ -58,4 +58,26 @@ public extension Sequence {
         }
         group.wait()
     }
+    
+//    public func groupBy<Key: Hashable>(keySelector: @escaping (Iterator.Element) -> Key) -> [Key : [Iterator.Element]] {
+//        return self.reduce([:]){ (acc: [Key : [Iterator.Element]], value) in
+//            let key = keySelector(value)
+//            var new = acc
+//            new[key] = (acc[key] ?? []) + [value]
+//            return new
+//        }
+//    }
+    // 上記のように関数型っぽく書きたいが、パフォーマンス向上のため下記のようにする（Swift4にて改善可能？）
+    public func groupBy<Key: Hashable>(keySelector: (Iterator.Element) -> Key) -> [Key : [Iterator.Element]] {
+        var result: Dictionary<Key, [Iterator.Element]> = [:]
+        for value in self {
+            let key = keySelector(value)
+            if result[key] == nil {
+                result[key] = [value]
+            } else {
+                result[key]!.append(value)
+            }
+        }
+        return result
+    }
 }
